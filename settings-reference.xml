@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.1.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd">
+
+	<!-- Uncomment to keep this project's downloads out of your global cache (useful on CI agents) -->
+	<!-- <localRepository>${user.home}/.m2/repository</localRepository> -->
+
+	<interactiveMode>false</interactiveMode>
+	<offline>false</offline>
+
+	<servers>
+		<!--
+			Anypoint Exchange Maven facade v3 with a Connected App:
+			  username = the literal text ~~~Client~~~
+			  password = <client_id>~?~<client_secret>
+			The Connected App needs the scope "Exchange Viewer" (download) and "Exchange Contributor" (publish).
+		-->
+		<server>
+			<id>anypoint-exchange-v3</id>
+			<username>~~~Client~~~</username>
+			<password>${env.ANYPOINT_EXCHANGE_CLIENT_ID}~?~${env.ANYPOINT_EXCHANGE_CLIENT_SECRET}</password>
+		</server>
+		<!-- Same credentials for every other Exchange repository id declared in bom.xml -->
+		<server>
+			<id>anypoint-deploy-server</id>
+			<username>~~~Client~~~</username>
+			<password>${env.ANYPOINT_DEPLOY_CLIENT_ID}~?~${env.ANYPOINT_DEPLOY_CLIENT_SECRET}</password>
+		</server>
+		<!-- MuleSoft EE Nexus (only if you need EE-only artifacts such as some SOAPKit/MUnit dependencies) -->
+		<server>
+			<id>releases-ee</id>
+			<username>${env.MULESOFT_EE_USER}</username>
+			<password>${env.MULESOFT_EE_PASSWORD}</password>
+		</server>
+		<!--
+			REMOVED: the "cloudhub2.0" server with a plain username/password. Deployment now uses a Connected App
+			(see the ch2 / ch1 / rtf profiles in parent-pom.xml), so no personal password is ever needed.
+		-->
+	</servers>
+	<profiles>
+		<profile>
+			<id>anypoint</id>
+			<properties>
+				<ap.autodiscovery.client_id>${env.AP_AUTODISCOVERY_CLIENT_ID}</ap.autodiscovery.client_id>
+				<ap.autodiscovery.client_secret>${env.AP_AUTODISCOVERY_CLIENT_SECRET}</ap.autodiscovery.client_secret>
+				<encryption.key>${env.MULE_ENCRYPTION_KEY}</encryption.key>
+			</properties>
+		</profile>
+	</profiles>
+</settings>
+

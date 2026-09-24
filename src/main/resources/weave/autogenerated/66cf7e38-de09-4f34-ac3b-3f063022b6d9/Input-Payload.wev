@@ -1,0 +1,8 @@
+%dw 2.0
+
+type auto_66cf7e38_de09_4f34_ac3b_3f063022b6d9_Input_Payload = {
+  lastName: String, 
+  numBags: Number, 
+  _?: Any
+} {"description": "Represents a check-in request for a given passenger."}
+

@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================================ 
+	parent-pom.xml - LEVEL 2 of 3 (build behaviour shared by every Mule app) 
+	============================================================================ 
+	Owns: resource filtering, version enforcement, environment profiles and the 
+	deployment profiles for CloudHub 2.0 / CloudHub 1.0 / Runtime Fabric. Does 
+	NOT own: application name of a specific app (that is the child's job), or 
+	any secret (secrets come from settings.xml / CI environment variables). Usage 
+	examples (run from the app folder): Build + unit test : mvn clean package 
+	Deploy to CloudHub 2.0 dev : mvn clean deploy -DmuleDeploy -Pch2,dev Deploy 
+	to CloudHub 1.0 qa : mvn clean deploy -DmuleDeploy -Pch1,qa Deploy to RTF 
+	prod : mvn clean deploy -DmuleDeploy -Prtf,prod Only ONE of ch2 / ch1 / rtf 
+	may be active at a time: the Mule Maven Plugin rejects a POM that contains 
+	more than one deployment configuration. ============================================================================ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- Parent = the BOM (versions only). For real teams publish the BOM and 
+		delete <relativePath>. -->
+	<parent>
+		<groupId>713ed815-e409-4a51-9ef2-7a71017fa06e</groupId>
+		<artifactId>solutions-bom</artifactId>
+		<version>1.0.0</version>
+		<relativePath>./bom.xml</relativePath>
+	</parent>
+	<artifactId>solutions-parent-pom</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<name>solutions-parent-pom</name>
+
+	<properties>
+		<!-- ===== Deployment defaults (overridden by the dev / qa / prod profiles 
+			below) ===== -->
+		<ap.uri>https://anypoint.mulesoft.com</ap.uri>
+		<!-- Exact Anypoint environment NAME as shown in Runtime Manager (case 
+			sensitive) -->
+		<deploy.environment>Dev</deploy.environment>
+		<!-- Value handed to the app as property mule.env, so the app loads config-dev.yaml 
+			/ config-prod.yaml -->
+		<deploy.replicas>1</deploy.replicas>
+		<deploy.vcores>0.1</deploy.vcores>
+		<!-- CloudHub 2.0 target = shared space name; CloudHub 1.0 uses a region; 
+			RTF uses the cluster name -->
+		<deploy.ch2.target>Cloudhub-US-East-2</deploy.ch2.target>
+		<deploy.ch1.region>us-east-2</deploy.ch1.region>
+		<deploy.rtf.target>my-rtf-cluster</deploy.rtf.target>
+
+		<!-- Injected from settings.xml (which reads OS environment variables). 
+			NEVER hard-code these here. -->
+		<!-- ap.deploy.client_id / ap.deploy.client_secret : Connected App used 
+			only to DEPLOY. -->
+		<!-- ap.autodiscovery.client_id / ap.autodiscovery.client_secret : API 
+			Manager credentials the RUNNING app uses. -->
+		<!-- tls.keystore.password / tls.key.password : passwords of the HTTPS 
+			keystore. -->
+
+		<!-- Fail-fast rules used by the enforcer below -->
+		<java.required.range>[17,18)</java.required.range>
+		<maven.required.range>[${maven.min.version},${maven.max.version})</maven.required.range>
+	</properties>
+
+	<build>
+		<!-- ================= RESOURCE FILTERING ================= -->
+		<resources>
+			<!-- 1. Text resources: filtered. Delimiter is @...@ (see plugin config) 
+				so Mule's own ${placeholders} are never touched. -->
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<excludes>
+					<exclude>certs/**</exclude>
+					<exclude>**/*.p12</exclude>
+					<exclude>**/*.pfx</exclude>
+					<exclude>**/*.jks</exclude>
+					<exclude>**/*.jceks</exclude>
+					<exclude>**/*.crt</exclude>
+					<exclude>**/*.cer</exclude>
+					<exclude>**/*.der</exclude>
+					<exclude>**/*.pem</exclude>
+					<exclude>**/*.key</exclude>
+				</excludes>
+			</resource>
+			<!-- 2. Binary key material: NEVER filtered (filtering corrupts binary 
+				keystores and causes "keystore was tampered with") -->
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+				<includes>
+					<include>certs/**</include>
+					<include>**/*.p12</include>
+					<include>**/*.pfx</include>
+					<include>**/*.jks</include>
+					<include>**/*.jceks</include>
+					<include>**/*.crt</include>
+					<include>**/*.cer</include>
+					<include>**/*.der</include>
+					<include>**/*.pem</include>
+					<include>**/*.key</include>
+				</includes>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<filtering>true</filtering>
+				<excludes>
+					<exclude>certs/**</exclude>
+					<exclude>**/*.p12</exclude>
+					<exclude>**/*.pfx</exclude>
+					<exclude>**/*.jks</exclude>
+					<exclude>**/*.jceks</exclude>
+					<exclude>**/*.crt</exclude>
+					<exclude>**/*.cer</exclude>
+					<exclude>**/*.der</exclude>
+					<exclude>**/*.pem</exclude>
+					<exclude>**/*.key</exclude>
+				</excludes>
+			</testResource>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<filtering>false</filtering>
+				<includes>
+					<include>certs/**</include>
+					<include>**/*.p12</include>
+					<include>**/*.pfx</include>
+					<include>**/*.jks</include>
+					<include>**/*.jceks</include>
+					<include>**/*.crt</include>
+					<include>**/*.cer</include>
+					<include>**/*.der</include>
+					<include>**/*.pem</include>
+					<include>**/*.key</include>
+				</includes>
+			</testResource>
+		</testResources>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<configuration>
+						<encoding>UTF-8</encoding>
+						<!-- Why @ instead of the default ${ }: Mule XML/YAML/log4j2 files 
+							are full of ${property} and ${sys:...} placeholders. With default delimiters 
+							Maven silently replaces any that match a Maven property name (for example 
+							${mule.env}), which bakes a build-time value into the jar and defeats per-environment 
+							config. In YAML/XML files you now write @project.version@ when you WANT build-time 
+							substitution. -->
+						<useDefaultDelimiters>false</useDefaultDelimiters>
+						<delimiters>
+							<delimiter>@</delimiter>
+						</delimiters>
+						<nonFilteredFileExtensions>
+							<nonFilteredFileExtension>p12</nonFilteredFileExtension>
+							<nonFilteredFileExtension>pfx</nonFilteredFileExtension>
+							<nonFilteredFileExtension>jks</nonFilteredFileExtension>
+							<nonFilteredFileExtension>jceks</nonFilteredFileExtension>
+							<nonFilteredFileExtension>crt</nonFilteredFileExtension>
+							<nonFilteredFileExtension>cer</nonFilteredFileExtension>
+							<nonFilteredFileExtension>der</nonFilteredFileExtension>
+							<nonFilteredFileExtension>pem</nonFilteredFileExtension>
+							<nonFilteredFileExtension>key</nonFilteredFileExtension>
+						</nonFilteredFileExtensions>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-clean-plugin</artifactId>
+				</plugin>
+				<plugin>
+					<groupId>org.mule.tools.maven</groupId>
+					<artifactId>mule-maven-plugin</artifactId>
+					<extensions>true</extensions>
+					<configuration>
+						<!-- Deliberately NO deployment block here: each deploy target lives 
+							in its own profile below. -->
+						<classifier>mule-application</classifier>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+		<plugins>
+			<!-- ================= FAIL FAST ON WRONG TOOLS ================= -->
+			<!-- Stops "works on my laptop" problems: wrong Maven (3.8 / 4.x) or wrong 
+				JDK stops the build in seconds. -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>enforce-toolchain</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<requireMavenVersion>
+									<version>${maven.required.range}</version>
+									<message>Use Apache Maven 3.9.x (Mule Maven Plugin does not
+										support 3.8 or 4.x).</message>
+								</requireMavenVersion>
+								<requireJavaVersion>
+									<version>${java.required.range}</version>
+									<message>Build with a JDK 17 (Temurin/Adoptium/Corretto). Mule
+										4.9 runs on Java 17.</message>
+								</requireJavaVersion>
+								<!-- No -SNAPSHOT dependencies in a release build: they are not reproducible -->
+								<requireReleaseDeps>
+									<onlyWhenRelease>true</onlyWhenRelease>
+								</requireReleaseDeps>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<!-- ===================================================================== 
+			ENVIRONMENT PROFILES (pick one: -Pdev / -Pqa / -Pprod ) ===================================================================== -->
+		<profile>
+			<id>dev</id>
+			<properties>
+				<deploy.environment>Dev</deploy.environment>
+				<mule.env>dev</mule.env>
+				<deploy.replicas>1</deploy.replicas>
+				<deploy.vcores>0.1</deploy.vcores>
+			</properties>
+		</profile>
+		<profile>
+			<id>qa</id>
+			<properties>
+				<deploy.environment>QA</deploy.environment>
+				<mule.env>qa</mule.env>
+				<deploy.replicas>1</deploy.replicas>
+				<deploy.vcores>0.2</deploy.vcores>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<properties>
+				<deploy.environment>Production</deploy.environment>
+				<mule.env>prod</mule.env>
+				<!-- Production: minimum 2 replicas for HA and zero-downtime rolling 
+					updates -->
+				<deploy.replicas>2</deploy.replicas>
+				<deploy.vcores>0.5</deploy.vcores>
+			</properties>
+		</profile>
+
+		<!-- ===================================================================== 
+			CLOUDHUB 2.0 (mvn deploy -DmuleDeploy -Pch2,dev) ===================================================================== -->
+		<profile>
+			<id>ch2</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.mule.tools.maven</groupId>
+						<artifactId>mule-maven-plugin</artifactId>
+						<configuration>
+							<cloudhub2Deployment>
+								<uri>${ap.uri}</uri>
+								<!-- MC = MuleSoft-hosted Cloud (CloudHub 2.0) -->
+								<provider>MC</provider>
+								<businessGroupId>713ed815-e409-4a51-9ef2-7a71017fa06e</businessGroupId>
+								<environment>${deploy.environment}</environment>
+								<target>${deploy.ch2.target}</target>
+								<!-- Runtime = plain server + channel + Java version (plugin >= 4.1.0). 
+									Use the release channel that matches the runtime you chose: LTS for 4.9 -->
+								<muleVersion>${cloudhub.runtime.version}</muleVersion>
+								<releaseChannel>LTS</releaseChannel>
+								<javaVersion>17</javaVersion>
+								<replicas>${deploy.replicas}</replicas>
+								<vCores>${deploy.vcores}</vCores>
+								<!-- CH2 app names: lowercase, digits, hyphen, max ~42 chars. Env 
+									suffix keeps names unique per env. -->
+								<applicationName>${project.artifactId}-${mule.env}</applicationName>
+								<deploymentTimeout>600000</deploymentTimeout>
+
+								<!-- ADD THIS: References the server ID defined in your Maven settings.xml -->
+								<server>anypoint-deploy-server</server>
+
+								<connectedAppGrantType>client_credentials</connectedAppGrantType>
+								<!-- Rolling update = new replica must be healthy before the old 
+									one stops -->
+								<deploymentSettings>
+									<updateStrategy>rolling</updateStrategy>
+									<enforceDeployingReplicasAcrossNodes>true</enforceDeployingReplicasAcrossNodes>
+									<!-- HTTPS note: on CH2 the shared ingress terminates public TLS. 
+										Keep your listener on HTTP 8081 for that. Enable end-to-end TLS (listener 
+										on HTTPS 8082 + tls:context) only when you need it, and then also turn on 
+										last-mile security for the app in Runtime Manager. -->
+								</deploymentSettings>
+								<!-- Plain properties: visible in Runtime Manager UI. Non-secret 
+									only. -->
+								<properties>
+									<mule.env>${mule.env}</mule.env>
+									<anypoint.platform.client_id>${ap.autodiscovery.client_id}</anypoint.platform.client_id>
+								</properties>
+								<!-- Secure properties: masked in Runtime Manager, not readable after 
+									deploy. Secrets go here. -->
+								<secureProperties>
+									<anypoint.platform.client_secret>${ap.autodiscovery.client_secret}</anypoint.platform.client_secret>
+									<encryption.key>${encryption.key}</encryption.key>
+								</secureProperties>
+							</cloudhub2Deployment>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<!-- ===================================================================== 
+			CLOUDHUB 1.0 (mvn deploy -DmuleDeploy -Pch1,dev) TEMPLATE: same standards, 
+			different block. Not exercised in the sample; verify tag names against the 
+			Mule Maven Plugin 4.10 deployment-settings docs before first use. ===================================================================== -->
+		<profile>
+			<id>ch1</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.mule.tools.maven</groupId>
+						<artifactId>mule-maven-plugin</artifactId>
+						<configuration>
+							<cloudHubDeployment>
+								<uri>${ap.uri}</uri>
+								<environment>${deploy.environment}</environment>
+								<muleVersion>${cloudhub.runtime.version}</muleVersion>
+								<releaseChannel>LTS</releaseChannel>
+								<javaVersion>17</javaVersion>
+								<region>${deploy.ch1.region}</region>
+								<workers>${deploy.replicas}</workers>
+								<workerType>MICRO</workerType>
+								<!-- CH1 app names are GLOBALLY unique across all customers: prefix 
+									with your company or org short name -->
+								<applicationName>yourorg-${project.artifactId}-${mule.env}</applicationName>
+								<connectedAppClientId>${ap.deploy.client_id}</connectedAppClientId>
+								<connectedAppClientSecret>${ap.deploy.client_secret}</connectedAppClientSecret>
+								<connectedAppGrantType>client_credentials</connectedAppGrantType>
+								<properties>
+									<mule.env>${mule.env}</mule.env>
+									<anypoint.platform.client_id>${ap.autodiscovery.client_id}</anypoint.platform.client_id>
+								</properties>
+								<secureProperties>
+									<anypoint.platform.client_secret>${ap.autodiscovery.client_secret}</anypoint.platform.client_secret>
+									<encryption.key>${encryption.key}</encryption.key>
+								</secureProperties>
+							</cloudHubDeployment>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<!-- ===================================================================== 
+			RUNTIME FABRIC (RTF) (mvn deploy -DmuleDeploy -Prtf,prod) TEMPLATE: not exercised 
+			in the sample; verify tag names against the plugin docs before first use. 
+			===================================================================== -->
+		<profile>
+			<id>rtf</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.mule.tools.maven</groupId>
+						<artifactId>mule-maven-plugin</artifactId>
+						<configuration>
+							<runtimeFabricDeployment>
+								<uri>${ap.uri}</uri>
+								<environment>${deploy.environment}</environment>
+								<target>${deploy.rtf.target}</target>
+								<muleVersion>${cloudhub.runtime.version}</muleVersion>
+								<releaseChannel>LTS</releaseChannel>
+								<javaVersion>17</javaVersion>
+								<applicationName>${project.artifactId}-${mule.env}</applicationName>
+								<replicas>${deploy.replicas}</replicas>
+								<!-- Requests/limits in Kubernetes units. Requests = guaranteed, 
+									limits = ceiling. -->
+								<cpuReserved>500m</cpuReserved>
+								<cpuLimit>1000m</cpuLimit>
+								<memoryReserved>1000Mi</memoryReserved>
+								<memoryLimit>1000Mi</memoryLimit>
+								<connectedAppClientId>${ap.deploy.client_id}</connectedAppClientId>
+								<connectedAppClientSecret>${ap.deploy.client_secret}</connectedAppClientSecret>
+								<connectedAppGrantType>client_credentials</connectedAppGrantType>
+								<deploymentSettings>
+									<updateStrategy>rolling</updateStrategy>
+									<enforceDeployingReplicasAcrossNodes>true</enforceDeployingReplicasAcrossNodes>
+									<!-- RTF: the ingress controller (NGINX) terminates TLS with the 
+										cert you installed on the cluster. -->
+								</deploymentSettings>
+								<properties>
+									<mule.env>${mule.env}</mule.env>
+									<anypoint.platform.client_id>${ap.autodiscovery.client_id}</anypoint.platform.client_id>
+								</properties>
+								<secureProperties>
+									<anypoint.platform.client_secret>${ap.autodiscovery.client_secret}</anypoint.platform.client_secret>
+									<encryption.key>${encryption.key}</encryption.key>
+								</secureProperties>
+							</runtimeFabricDeployment>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>
