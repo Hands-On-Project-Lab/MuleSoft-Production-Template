@@ -10,7 +10,32 @@
 
 	<groupId>713ed815-e409-4a51-9ef2-7a71017fa06e</groupId>
 	<artifactId>check-in-papi-impl</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
+	
+	<!-- In MuleSoft (Mule 4) projects, 
+	     the <packaging> element in pom.xml determines how Maven builds, packages, and resolves artifacts:
+		
+		 mule-application: 
+		 - The default packaging type for standard Mule applications. 
+		 - It compiles flows, resources, and dependencies into a lightweight runnable application JAR.
+		 
+		 
+		 mule-domain: 
+		 - Used for Mule Domain Projects. 
+		 - Domain projects bundle shared resources (like HTTP Listener configurations, DB connection pools, or TLS certificates) across multiple Mule applications running on the same Mule runtime.
+
+		mule-domain-bundle: 
+		- Used when you need to package multiple mule-domain projects into a single bundle artifact for centralized deployment.
+
+		mule-policy: 
+		- Used for developing custom API Gateway policies that can be uploaded to Anypoint Exchange and applied via API Manager.
+		
+		jar: 
+		- Used for standard Java libraries, custom Mule Java modules, custom connectors (built via Mule SDK), or DataWeave module libraries.
+		
+		pom: 
+		- Used for Parent POMs or Bill of Materials (BOM) projects to centralize dependency versions, plugins, repositories, and build profiles across multiple Mule apps.
+	-->
 	<packaging>mule-application</packaging>
 
 	<name>check-in-papi</name>

@@ -1,0 +1,151 @@
+2026-09-25T08:50:08.581Z INFO [st8sm] FileSystemPluginDiscoverer main - Unzipping plugin file: mule-anypoint-monitoring-inproc-server-plugin-1.0.0.11-mule-server-plugin.jar
+2026-09-25T08:50:08.988Z INFO [st8sm] FileSystemPluginDiscoverer main - Unzipping plugin file: mule-troubleshooting-plugin-1.0.5-mule-server-plugin.jar
+2026-09-25T08:50:08.991Z INFO [st8sm] ServerPluginDescriptorFactory main - Creating plugin from folder /opt/mule/server-plugins/cloud-object-store-plugin
+2026-09-25T08:50:08.999Z INFO [st8sm] ServerPluginDescriptorFactory main - Creating plugin from folder /opt/mule/server-plugins/mule-agent-plugin
+2026-09-25T08:50:09.077Z INFO [st8sm] ServerPluginDescriptorFactory main - Creating plugin from folder /opt/mule/server-plugins/mule-anypoint-monitoring-inproc-server-plugin-1.0.0.11-mule-server-plugin
+2026-09-25T08:50:09.08Z INFO [st8sm] ServerPluginDescriptorFactory main - Creating plugin from folder /opt/mule/server-plugins/mule-troubleshooting-plugin-1.0.5-mule-server-plugin
+2026-09-25T08:50:09.18Z INFO [st8sm] MulePluginManager main - Registering plugin: object-store-plugin
+2026-09-25T08:50:09.382Z INFO [st8sm] AgentPlugin main - Mule agent keystore file does not exits in /opt/mule/conf/mule-agent.jks.
+2026-09-25T08:50:13.279Z INFO [st8sm] AbstractDataTypeBuilderFactory main - Loaded AbstractDataTypeBuilderFactory implementation 'org.mule.runtime.core.api.metadata.DefaultDataTypeBuilderFactory' from classloader 'jdk.internal.loader.Loader@6c37bd27'
+2026-09-25T08:50:13.993Z INFO [st8sm] MulePluginManager main - Registering plugin: mule-agent-plugin
+2026-09-25T08:50:13.994Z INFO [st8sm] MulePluginManager main - Registering plugin: anypoint-monitoring-inproc
+2026-09-25T08:50:14.073Z INFO [st8sm] MulePluginManager main - Registering plugin: mule-troubleshooting-plugin
+2026-09-25T08:50:14.074Z INFO [st8sm] CloudObjectStorePlugin main - Loaded object store core extension
+2026-09-25T08:50:14.082Z INFO [st8sm] MulePluginManager main - Starting plugin: mule-agent-plugin
+2026-09-25T08:50:15.172Z INFO [st8sm] Server main - jetty-12.1.12; built: 2026-08-03T22:37:55.389Z; git: 10dd3948f37767b84cc2c62358364f042e51dbbe; jvm 17.0.18+8
+2026-09-25T08:50:16.086Z WARN [st8sm] WadlFeature main - JAXBContext implementation could not be found. WADL feature is disabled.
+2026-09-25T08:50:16.586Z WARN [st8sm] Providers main - A provider com.mulesoft.agent.external.handlers.monitoring.MonitoringRequestHandler registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider com.mulesoft.agent.external.handlers.monitoring.MonitoringRequestHandler will be ignored.
+2026-09-25T08:50:16.586Z WARN [st8sm] Providers main - A provider com.mulesoft.agent.external.handlers.healthcheck.HealthCheckRequestHandler registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider com.mulesoft.agent.external.handlers.healthcheck.HealthCheckRequestHandler will be ignored.
+2026-09-25T08:50:16.586Z WARN [st8sm] Providers main - A provider com.mulesoft.agent.external.handlers.action.ActionRequestHandler registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider com.mulesoft.agent.external.handlers.action.ActionRequestHandler will be ignored.
+2026-09-25T08:50:16.586Z WARN [st8sm] Providers main - A provider com.mulesoft.agent.external.handlers.properties.PropertiesRequestHandler registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider com.mulesoft.agent.external.handlers.properties.PropertiesRequestHandler will be ignored.
+2026-09-25T08:50:16.586Z WARN [st8sm] Providers main - A provider com.mulesoft.agent.external.handlers.valueprovider.ValueProviderRequestHandler registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider com.mulesoft.agent.external.handlers.valueprovider.ValueProviderRequestHandler will be ignored.
+2026-09-25T08:50:16.587Z WARN [st8sm] Providers main - A provider com.mulesoft.agent.external.handlers.administration.ComponentRequestHandler registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider com.mulesoft.agent.external.handlers.administration.ComponentRequestHandler will be ignored.
+2026-09-25T08:50:16.587Z WARN [st8sm] Providers main - A provider com.mulesoft.agent.external.handlers.clustering.ClusteringRequestHandler registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider com.mulesoft.agent.external.handlers.clustering.ClusteringRequestHandler will be ignored.
+2026-09-25T08:50:16.587Z WARN [st8sm] Providers main - A provider com.mulesoft.agent.external.handlers.tooling.ToolingRequestHandler registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider com.mulesoft.agent.external.handlers.tooling.ToolingRequestHandler will be ignored.
+2026-09-25T08:50:16.587Z WARN [st8sm] Providers main - A provider com.mulesoft.agent.external.handlers.deployment.ApplicationsRequestHandler registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider com.mulesoft.agent.external.handlers.deployment.ApplicationsRequestHandler will be ignored.
+2026-09-25T08:50:16.587Z WARN [st8sm] Providers main - A provider com.mulesoft.agent.external.handlers.logging.LoggingRequestHandler registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider com.mulesoft.agent.external.handlers.logging.LoggingRequestHandler will be ignored.
+2026-09-25T08:50:16.587Z WARN [st8sm] Providers main - A provider com.mulesoft.agent.external.handlers.flows.FlowsRequestHandler registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider com.mulesoft.agent.external.handlers.flows.FlowsRequestHandler will be ignored.
+2026-09-25T08:50:16.587Z WARN [st8sm] Providers main - A provider com.mulesoft.rtf.handlers.RtfSupportHandler registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider com.mulesoft.rtf.handlers.RtfSupportHandler will be ignored.
+2026-09-25T08:50:16.587Z WARN [st8sm] Providers main - A provider com.mulesoft.agent.external.handlers.extensions.ExtensionRequestHandler registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider com.mulesoft.agent.external.handlers.extensions.ExtensionRequestHandler will be ignored.
+2026-09-25T08:50:16.587Z WARN [st8sm] Providers main - A provider com.mulesoft.agent.external.handlers.installer.InstallerRequestHandler registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider com.mulesoft.agent.external.handlers.installer.InstallerRequestHandler will be ignored.
+2026-09-25T08:50:16.587Z WARN [st8sm] Providers main - A provider com.mulesoft.agent.external.handlers.dataweave.DataWeaveRequestHandler registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider com.mulesoft.agent.external.handlers.dataweave.DataWeaveRequestHandler will be ignored.
+2026-09-25T08:50:16.587Z WARN [st8sm] Providers main - A provider com.mulesoft.agent.external.handlers.tracking.TrackingExternalHandler registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider com.mulesoft.agent.external.handlers.tracking.TrackingExternalHandler will be ignored.
+2026-09-25T08:50:16.588Z WARN [st8sm] Providers main - A provider com.mulesoft.rtf.handlers.RtfProbeHandler registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider com.mulesoft.rtf.handlers.RtfProbeHandler will be ignored.
+2026-09-25T08:50:16.588Z WARN [st8sm] Providers main - A provider com.mulesoft.agent.external.handlers.deployment.DomainsRequestHandler registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider com.mulesoft.agent.external.handlers.deployment.DomainsRequestHandler will be ignored.
+2026-09-25T08:50:16.588Z WARN [st8sm] Providers main - A provider com.mulesoft.agent.external.handlers.metadata.MetadataRequestHandler registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider com.mulesoft.agent.external.handlers.metadata.MetadataRequestHandler will be ignored.
+2026-09-25T08:50:16.588Z WARN [st8sm] Providers main - A provider com.mulesoft.agent.external.handlers.runtime.RuntimeConfigurationRequestHandler registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider com.mulesoft.agent.external.handlers.runtime.RuntimeConfigurationRequestHandler will be ignored.
+2026-09-25T08:50:17.978Z INFO [st8sm] ContextHandler main - Started oeje8n.ContextHandler$CoreContextHandler@62aefc75{ROOT,/,b=null,a=AVAILABLE,h=oeje8n.ContextHandler$CoreContextHandler$CoreToNestedHandler@c6653e{STARTED}}
+2026-09-25T08:50:17.979Z INFO [st8sm] Server main - Started oejs.Server@788fa91f{STARTING}[12.1.12,sto=0] @2885ms
+2026-09-25T08:50:17.989Z INFO [st8sm] CollectorAgentBase main - Starting
+2026-09-25T08:50:17.989Z INFO [st8sm] Configuration main - Mode: RTF
+2026-09-25T08:50:17.99Z INFO [st8sm] Configuration main - Premium tier: true
+2026-09-25T08:50:17.99Z INFO [st8sm] Configuration main - Producer Name: analytics-metrics-collector-mule4
+2026-09-25T08:50:17.99Z INFO [st8sm] Configuration main - Producer Version: 3.2.18
+2026-09-25T08:50:17.99Z INFO [st8sm] Configuration main - Prebuffer max size: 10000
+2026-09-25T08:50:17.99Z INFO [st8sm] Configuration main - Combiner max size: 1000
+2026-09-25T08:50:17.99Z INFO [st8sm] Configuration main - Aggregation time interval: 60000 ms
+2026-09-25T08:50:17.99Z INFO [st8sm] Configuration main - Aggregation Top N: 100
+2026-09-25T08:50:17.991Z INFO [st8sm] Configuration main - Metric log file name: /opt/mule/logs/_metric.log pattern: /opt/mule/logs/_metric-%i.log max size: 10 MB max files: 10
+2026-09-25T08:50:17.991Z INFO [st8sm] Configuration main - Metric V2 log file name: /opt/mule/logs/_v2_metric.log pattern: /opt/mule/logs/_v2_metric-%i.log max size: 10 MB max files: 10
+2026-09-25T08:50:17.991Z INFO [st8sm] Configuration main - Meter log file name: /opt/mule/logs/_metering_metric.log pattern: /opt/mule/logs/_metering_metric-%i.log max size: 100 KB max files: 20
+2026-09-25T08:50:17.991Z INFO [st8sm] Configuration main - Raw API Metric log file name: /opt/mule/logs/_raw_api_metric.log pattern: /opt/mule/logs/_raw_api_metric-%i.log max size: 5 MB max files: 10
+2026-09-25T08:50:17.993Z INFO [st8sm] Configuration main - API Metrics Level: ALL
+2026-09-25T08:50:17.993Z INFO [st8sm] Configuration main - Raw API Metrics Enabled: false
+2026-09-25T08:50:17.993Z INFO [st8sm] Configuration main - Thread Pool Size: 1
+2026-09-25T08:50:18.073Z INFO [st8sm] Configuration main - RAML-based Endpoint Normalization Enabled: true
+2026-09-25T08:50:18.073Z INFO [st8sm] Configuration main - Preserved Endpoint Tokens: []
+2026-09-25T08:50:19.384Z INFO [st8sm] ContainerThreadPoolsConfig main - No thread pools config file found. Using default values.
+2026-09-25T08:50:19.494Z INFO [st8sm] StdSchedulerFactory CronSchedulerHandler - Using default implementation for ThreadExecutor
+2026-09-25T08:50:19.578Z INFO [st8sm] SchedulerSignalerImpl CronSchedulerHandler - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-09-25T08:50:19.578Z INFO [st8sm] QuartzScheduler CronSchedulerHandler - Quartz Scheduler v.2.3.2 created.
+2026-09-25T08:50:19.579Z INFO [st8sm] RAMJobStore CronSchedulerHandler - RAMJobStore initialized.
+2026-09-25T08:50:19.58Z INFO [st8sm] QuartzScheduler CronSchedulerHandler - Scheduler meta-data: Quartz Scheduler (v2.3.2) '[MuleRuntime].' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+2026-09-25T08:50:19.58Z INFO [st8sm] StdSchedulerFactory CronSchedulerHandler - Quartz scheduler '[MuleRuntime].' initialized from an externally provided properties instance.
+2026-09-25T08:50:19.58Z INFO [st8sm] StdSchedulerFactory CronSchedulerHandler - Quartz scheduler version: 2.3.2
+2026-09-25T08:50:19.58Z INFO [st8sm] QuartzScheduler main - Scheduler [MuleRuntime]._$_NON_CLUSTERED started.
+2026-09-25T08:50:19.982Z INFO [st8sm] JMXMetricHandler pool-14-thread-1 - Pod CPU limit value loaded from environment.
+2026-09-25T08:50:19.982Z INFO [st8sm] JMXMetricHandler pool-14-thread-1 - Current pod cpu multiplier value = 2.2172949002217295
+2026-09-25T08:50:20.075Z INFO [st8sm] MdasTelemetryPlugin main - MdasTelemetryPlugin: dormant — MULE_INPROC_MONITORING_ENABLED not set to 'true' (env) and -Dmule.inproc.monitoring.enabled not set to 'true' (sysprop). In-proc telemetry engine will not start; the sidecar container (if present) handles telemetry.
+2026-09-25T08:50:20.075Z INFO [st8sm] MulePluginManager main - Starting plugin: mule-troubleshooting-plugin
+2026-09-25T08:50:20.08Z INFO [st8sm] MulePluginManager main - Starting plugin: object-store-plugin
+2026-09-25T08:50:20.084Z INFO [st8sm] JMXMetricHandler pool-14-thread-1 - Pod CPU request value loaded from environment.
+2026-09-25T08:50:24.282Z INFO [st8sm] ArtifactArchiveInstaller main - Exploding a Mule artifact archive: '/tmp/mule-received-artifact-14829454222451812761/check-in-papi-impl-dev.jar'
+2026-09-25T08:50:26.105Z INFO [st8sm] CloudObjectStoreListenerService main - ObjectStore clientId not provided. ObjectStore will not be initialized
+2026-09-25T08:50:26.105Z INFO [st8sm] CloudObjectStoreListenerService main - starting object store plugin v2
+2026-09-25T08:50:28.874Z WARN [st8sm] ConfigRefDeclarationEnricher ForkJoinPool.commonPool-worker-1 - Component 'console' in extension 'APIKit' already has a 'config-ref' parameter defined. Skipping ConfigRefDeclarationEnricher for it.
+2026-09-25T08:50:28.874Z WARN [st8sm] ConfigRefDeclarationEnricher ForkJoinPool.commonPool-worker-1 - Component 'router' in extension 'APIKit' already has a 'config-ref' parameter defined. Skipping ConfigRefDeclarationEnricher for it.
+2026-09-25T08:50:35.273Z INFO [st8sm] AbstractBindingContextBuilderFactory main - Loaded BindingContextBuilderFactory implementation 'org.mule.runtime.core.api.el.DefaultBindingContextBuilderFactory' from classloader 'jdk.internal.loader.Loader@6c37bd27'
+2026-09-25T08:50:35.279Z WARN [st8sm] DefaultBindingContextBuilder$BindingContextImplementation main - Two modules with namespace 'Batch' were found in a binding context. Set log level to DEBUG for details
+2026-09-25T08:50:52.085Z INFO [st8sm] AbstractMuleMessageBuilderFactory main - Loaded MuleMessageBuilderFactory implementation 'org.mule.runtime.core.internal.message.DefaultMessageBuilderFactory' from classloader 'jdk.internal.loader.Loader@6c37bd27'
+2026-09-25T08:50:53.083Z INFO [st8sm] TransactionJournal main - Using files for tx logs /opt/mule/./.mule/check-in-papi-impl-dev/queue-tx-log/tx1.log and /opt/mule/./.mule/check-in-papi-impl-dev/queue-tx-log/tx2.log
+2026-09-25T08:50:53.086Z INFO [st8sm] TransactionJournal main - Using files for tx logs /opt/mule/./.mule/check-in-papi-impl-dev/queue-xa-tx-log/tx1.log and /opt/mule/./.mule/check-in-papi-impl-dev/queue-xa-tx-log/tx2.log
+2026-09-25T08:50:54.194Z INFO [st8sm] TlsProperties main - Loading configuration file: tls-default.conf
+2026-09-25T08:50:54.274Z INFO [st8sm] AbstractLifecycleManager main - Initialising Bean: org.mule.runtime.module.extension.internal.runtime.config.StaticConfigurationProvider-apiHttpListenerConfig
+2026-09-25T08:50:55.582Z INFO [st8sm] FlowConstructLifecycleManager main - Initialising flow: payment-approval-by-pnr
+2026-09-25T08:51:02.974Z WARN [st8sm] FlowFinder main - Action-Resource-ContentType triplet has no implementation -> put:/tickets/{PNR}/paymentApproval:application/json
+2026-09-25T08:51:02.977Z INFO [st8sm] Configuration main - Building resource URI cache...
+2026-09-25T08:51:02.989Z INFO [st8sm] FlowConstructLifecycleManager main - Initialising flow: check-in-by-pnr
+2026-09-25T08:51:02.991Z INFO [st8sm] FlowConstructLifecycleManager main - Initialising flow: api-main
+2026-09-25T08:51:03.003Z INFO [st8sm] AbstractLifecycleManager main - Initialising Bean: listener
+2026-09-25T08:51:03.173Z INFO [st8sm] Router main - ********************************************************************************
+* APIKit Router 'apiConfig' started using Parser: AMF
+********************************************************************************
+2026-09-25T08:51:03.174Z INFO [st8sm] FlowConstructLifecycleManager main - Initialising flow: api-console
+2026-09-25T08:51:03.177Z INFO [st8sm] AbstractLifecycleManager main - Initialising Bean: listener
+2026-09-25T08:51:03.18Z INFO [st8sm] Console main - ********************************************************************************
+* APIKit Console URL: https://localhost:8082/console/v2/
+********************************************************************************
+2026-09-25T08:51:03.181Z INFO [st8sm] FlowConstructLifecycleManager main - Initialising flow: put:\tickets\(PNR)\checkin:application\json:apiConfig
+2026-09-25T08:51:03.183Z INFO [st8sm] FlowConstructLifecycleManager main - Initialising flow: put:\tickets\(PNR)\paymentApproval:application\json:api-config
+2026-09-25T08:51:03.683Z INFO [st8sm] ApiDeploymentCoreExtension main - Starting API Gateway Extension in STANDALONE mode
+2026-09-25T08:51:03.893Z INFO [st8sm] GateKeeper main - GateKeeper started in FLEXIBLE mode
+2026-09-25T08:51:05.401Z INFO [st8sm] ApiPlatformClientProvider main - Client ID and Client Secret successfully validated against API Manager.
+2026-09-25T08:51:06.785Z WARN [st8sm] DefaultBindingContextBuilder$BindingContextImplementation main - Two modules with namespace 'Batch' were found in a binding context. Set log level to DEBUG for details
+2026-09-25T08:51:07.275Z INFO [st8sm] TransactionJournal main - Using files for tx logs /opt/mule/./.mule/gatekeeper-21197184 @ check-in-papi-impl-dev-api-main/queue-tx-log/tx1.log and /opt/mule/./.mule/gatekeeper-21197184 @ check-in-papi-impl-dev-api-main/queue-tx-log/tx2.log
+2026-09-25T08:51:07.275Z INFO [st8sm] TransactionJournal main - Using files for tx logs /opt/mule/./.mule/gatekeeper-21197184 @ check-in-papi-impl-dev-api-main/queue-xa-tx-log/tx1.log and /opt/mule/./.mule/gatekeeper-21197184 @ check-in-papi-impl-dev-api-main/queue-xa-tx-log/tx2.log
+2026-09-25T08:51:07.29Z INFO [st8sm] AbstractLifecycleManager main - Initialising Bean: proxy-policy-3f6114e0-b8be-11f1-a36b-02b318cc940e
+2026-09-25T08:51:07.374Z INFO [st8sm] QueueXaResourceManager main - Started ResourceManager
+2026-09-25T08:51:07.374Z INFO [st8sm] QueueXaResourceManager main - Starting ResourceManager
+2026-09-25T08:51:07.778Z INFO [st8sm] AbstractLifecycleManager main - Starting Bean: proxy-policy-3f6114e0-b8be-11f1-a36b-02b318cc940e
+2026-09-25T08:51:08.205Z INFO [st8sm] BlockingGateKeeper main - API ApiKey{id='21197184'} is blocked (unavailable).
+2026-09-25T08:51:08.206Z INFO [st8sm] QueueXaResourceManager main - Starting ResourceManager
+2026-09-25T08:51:08.206Z INFO [st8sm] QueueXaResourceManager main - Started ResourceManager
+2026-09-25T08:51:08.207Z INFO [st8sm] AbstractLifecycleManager main - Starting Bean: org.mule.runtime.module.extension.internal.runtime.config.StaticConfigurationProvider-apiHttpListenerConfig
+2026-09-25T08:51:08.378Z INFO [st8sm] FlowConstructLifecycleManager main - Starting flow: payment-approval-by-pnr
+2026-09-25T08:51:09.077Z INFO [st8sm] FlowConstructLifecycleManager main - Starting flow: check-in-by-pnr
+2026-09-25T08:51:09.083Z INFO [st8sm] FlowConstructLifecycleManager main - Starting flow: api-main
+2026-09-25T08:51:09.09Z INFO [st8sm] FlowConstructLifecycleManager main - Starting flow: api-console
+2026-09-25T08:51:09.173Z INFO [st8sm] FlowConstructLifecycleManager main - Starting flow: put:\tickets\(PNR)\checkin:application\json:apiConfig
+2026-09-25T08:51:09.275Z INFO [st8sm] FlowConstructLifecycleManager main - Starting flow: put:\tickets\(PNR)\paymentApproval:application\json:api-config
+2026-09-25T08:51:09.281Z INFO [st8sm] AbstractLifecycleManager main - Starting Bean: listener
+2026-09-25T08:51:09.284Z INFO [st8sm] AbstractLifecycleManager main - Starting Bean: listener
+2026-09-25T08:51:09.482Z WARN [st8sm] CorePricingStatsProviderImpl main - getDispatchedPrimaryMessagesCounter() could not be invoked, getPublicUsageCount() will fallback to getDispatchedMessagesCounter: class com.mulesoft.analytics.collector.agent.CorePricingStatsProviderImpl cannot access class org.mule.runtime.core.internal.management.stats.ApplicationStatistics (in module org.mule.runtime.core) because module org.mule.runtime.core does not export org.mule.runtime.core.internal.management.stats to unnamed module @254e9709
+2026-09-25T08:51:09.573Z INFO [st8sm] CollectorAgentBase main - Start collecting CorePricingStats metrics with frequency 60000 for app: check-in-papi-impl-dev
+2026-09-25T08:51:09.574Z INFO [st8sm] CollectorAgentBase main - Un-registering listeners for application check-in-papi-impl-dev
+2026-09-25T08:51:09.574Z INFO [st8sm] CollectorAgentBase main - Registering listeners for application check-in-papi-impl-dev
+2026-09-25T08:51:09.594Z INFO [st8sm] ExtensionMessageSource [MuleRuntime].uber.03: [check-in-papi-impl-dev].uber@org.mule.runtime.module.extension.internal.runtime.source.ExtensionMessageSource.lambda$reallyDoStart$18:531 @f2a5e1c - Message source 'listener' on flow 'api-console' successfully started
+2026-09-25T08:51:09.673Z INFO [st8sm] ExtensionMessageSource [MuleRuntime].uber.02: [check-in-papi-impl-dev].uber@org.mule.runtime.module.extension.internal.runtime.source.ExtensionMessageSource.lambda$reallyDoStart$18:531 @6517614 - Message source 'listener' on flow 'api-main' successfully started
+2026-09-25T08:51:09.69Z INFO [st8sm] CollectorAgentBase main - Fast header injection (per-app registry) enabled for app: check-in-papi-impl-dev
+2026-09-25T08:51:09.782Z INFO [st8sm] DeploymentListenerHelper main - Anypoint monitoring custom file appender disabled.
+2026-09-25T08:51:09.783Z INFO [st8sm] DeploymentListenerHelper main - Disabling console logging
+2026-09-25T08:51:09.783Z INFO [st8sm] DeploymentListenerHelper main - Anypoint Monitoring file appender enabled.
+2026-09-25T08:51:09.783Z INFO [st8sm] DeploymentListenerHelper main - Non-console appender found
+2026-09-25T08:51:10.979Z WARN [st8sm] DefaultBindingContextBuilder$BindingContextImplementation main - Two modules with namespace 'Batch' were found in a binding context. Set log level to DEBUG for details
+2026-09-25T08:51:11.482Z INFO [st8sm] TransactionJournal main - Using files for tx logs /opt/mule/./.mule/analytics-policy-21197184 @ check-in-papi-impl-dev-api-main/queue-xa-tx-log/tx1.log and /opt/mule/./.mule/analytics-policy-21197184 @ check-in-papi-impl-dev-api-main/queue-xa-tx-log/tx2.log
+2026-09-25T08:51:11.482Z INFO [st8sm] TransactionJournal main - Using files for tx logs /opt/mule/./.mule/analytics-policy-21197184 @ check-in-papi-impl-dev-api-main/queue-tx-log/tx1.log and /opt/mule/./.mule/analytics-policy-21197184 @ check-in-papi-impl-dev-api-main/queue-tx-log/tx2.log
+2026-09-25T08:51:11.583Z INFO [st8sm] AbstractLifecycleManager main - Initialising Bean: proxy-policy-41e2ddc0-b8be-11f1-a36b-02b318cc940e
+2026-09-25T08:51:11.586Z INFO [st8sm] QueueXaResourceManager main - Starting ResourceManager
+2026-09-25T08:51:11.586Z INFO [st8sm] QueueXaResourceManager main - Started ResourceManager
+2026-09-25T08:51:11.674Z INFO [st8sm] AbstractLifecycleManager main - Starting Bean: proxy-policy-41e2ddc0-b8be-11f1-a36b-02b318cc940e
+2026-09-25T08:51:12.401Z INFO [st8sm] QueueXaResourceManager agw-policy-set-deployment.01 - Stopped ResourceManager
+2026-09-25T08:51:12.401Z INFO [st8sm] QueueXaResourceManager agw-policy-set-deployment.01 - Stopping ResourceManager
+2026-09-25T08:51:12.403Z INFO [st8sm] AbstractLifecycleManager agw-policy-set-deployment.01 - Stopping Bean: proxy-policy-3f6114e0-b8be-11f1-a36b-02b318cc940e
+2026-09-25T08:51:12.579Z INFO [st8sm] AbstractConnector main - Started oejs.ServerConnector@643daaa{HTTP/1.1, (http/1.1)}{127.0.0.1:7777}
+2026-09-25T08:51:12.585Z INFO [st8sm] AbstractLifecycleManager agw-policy-set-deployment.01 - Disposing Bean: proxy-policy-3f6114e0-b8be-11f1-a36b-02b318cc940e
+2026-09-25T08:51:12.998Z INFO [st8sm] BlockingGateKeeper agw-policy-set-deployment.01 - API ApiKey{id='21197184'} is now unblocked (available).

@@ -1,6 +1,6 @@
 api:
   port: "8082"
-  id: "21194630"
+  id: "21197184"
   majorVersion: "v1"
   groupId: "@api.groupId@"
   artifactId: "@api.artifactId@"
