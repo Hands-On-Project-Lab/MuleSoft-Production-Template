@@ -1,0 +1,6 @@
+api:
+  majorVersion: "v1"
+  groupId: "@api.groupId@"
+  artifactId: "@api.artifactId@"
+  version: "@api.version@"
+  spec: "resource::${api.groupId}:${api.artifactId}:${api.version}:oas:zip:api.json"

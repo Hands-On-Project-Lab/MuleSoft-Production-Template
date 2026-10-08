@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<flow name="api-alive" doc:id="bd809a41-8813-4b8c-9102-bd48a42d2dfa" >
+		<http:listener doc:name="Listener" doc:id="3bf46237-057c-4f3f-9938-66e9f8cabd00" config-ref="apiHttpListenerConfig" path="/alive"/>
+		<set-payload value="UP" doc:name="UP" doc:id="609378fa-930c-4b7d-a970-64c6e208c6f5" />
+	</flow>
+	<flow name="api-ready" doc:id="13e4495b-c675-4e9e-b3b6-942fdfc6b688" >
+		<http:listener doc:name="Listener" doc:id="2184e213-ce44-4b31-9bc5-76249d1a202d" config-ref="apiHttpListenerConfig" path="/ready"/>
+		<flow-ref doc:name="check-all-dependencies-are-alive" doc:id="1d139253-6642-4577-a426-984a822884be" name="check-all-dependencies-are-alive"/>
+		<set-payload value="UP" doc:name="UP" doc:id="1739f66c-dd71-4c02-a29e-d969a83f173f" />
+	</flow>
+	<sub-flow name="check-all-dependencies-are-alive" doc:id="99dcc644-bf12-452c-9506-c23927c12eca" >
+		<logger level="INFO" doc:name="Logger" doc:id="87d1ce4a-3d64-492e-b4d5-257dff6281a2" message="Use HTTP Request to Check all Dependencies Alive or Not"/>
+	</sub-flow>
+</mule>

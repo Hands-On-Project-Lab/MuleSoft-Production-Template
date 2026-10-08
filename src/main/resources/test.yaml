@@ -1,10 +1,9 @@
 api:
   port: "8082"
-  id: "21197184"
-  
+  id: "21200902"
 
   
 tls.key-store:
   type: "pkcs12"
-  path: "certs/check-in-papi-dev.p12"
+  path: "certs/check-in-papi-test.p12"
   alias: "server"

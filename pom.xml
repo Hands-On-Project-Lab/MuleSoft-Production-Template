@@ -10,16 +10,15 @@
 
 	<groupId>713ed815-e409-4a51-9ef2-7a71017fa06e</groupId>
 	<artifactId>check-in-papi-impl</artifactId>
-	<version>1.0.0</version>
-	
+	<version>1.0.3</version>
 	<!-- In MuleSoft (Mule 4) projects, 
 	     the <packaging> element in pom.xml determines how Maven builds, packages, and resolves artifacts:
-		
+
 		 mule-application: 
 		 - The default packaging type for standard Mule applications. 
 		 - It compiles flows, resources, and dependencies into a lightweight runnable application JAR.
-		 
-		 
+
+
 		 mule-domain: 
 		 - Used for Mule Domain Projects. 
 		 - Domain projects bundle shared resources (like HTTP Listener configurations, DB connection pools, or TLS certificates) across multiple Mule applications running on the same Mule runtime.
@@ -29,10 +28,10 @@
 
 		mule-policy: 
 		- Used for developing custom API Gateway policies that can be uploaded to Anypoint Exchange and applied via API Manager.
-		
+
 		jar: 
 		- Used for standard Java libraries, custom Mule Java modules, custom connectors (built via Mule SDK), or DataWeave module libraries.
-		
+
 		pom: 
 		- Used for Parent POMs or Bill of Materials (BOM) projects to centralize dependency versions, plugins, repositories, and build profiles across multiple Mule apps.
 	-->
@@ -43,13 +42,13 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
 		<app.runtime>4.9.21</app.runtime>
 		<mule.maven.plugin.version>4.10.0</mule.maven.plugin.version>
 		<api.groupId>713ed815-e409-4a51-9ef2-7a71017fa06e</api.groupId>
 		<api.artifactId>check-in-papi</api.artifactId>
 		<api.version>1.0.0</api.version>
 		<munit.coverage.required>0</munit.coverage.required>
+		<api.layer>${api.layer.papi}</api.layer>
 	</properties>
 
 	<build>
@@ -81,12 +80,19 @@
 						</goals>
 					</execution>
 				</executions>
-				<configuration>
+				<configuration>	
+					<runtimeVersion>${app.runtime}</runtimeVersion>
+					<runtimeProduct>MULE_EE</runtimeProduct>
+					<environmentVariables>
+						<!--  this implies that all tests run in the same Maven build must use the same encrypt.key --> 
+						<encryption.key>${encryption.key}</encryption.key>
+					</environmentVariables>
 					<coverage>
 						<runCoverage>true</runCoverage>
 						<failBuild>true</failBuild>
 						<requiredApplicationCoverage>${munit.coverage.required}</requiredApplicationCoverage>
 						<formats>
+							<format>console</format>
 							<format>html</format>
 						</formats>
 					</coverage>
@@ -119,6 +125,9 @@
 			<version>1.12.5</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
+		
+		
+		
 		<!-- Test-only: the classifier + scope test keeps MUnit out of the deployable jar -->
 		<dependency>
 			<groupId>com.mulesoft.munit</groupId>
@@ -133,9 +142,21 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.mule.weave</groupId>
+			<artifactId>assertions</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+				
+		<dependency>
 			<groupId>com.mulesoft.modules</groupId>
 			<artifactId>mule-secure-configuration-property-module</artifactId>
-			<version>1.3.2</version>
+			<classifier>mule-plugin</classifier>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.modules</groupId>
+			<artifactId>mule-tracing-module</artifactId>
+			<!-- <version>1.2.1</version> -->
 			<classifier>mule-plugin</classifier>
 		</dependency>
 	</dependencies>

@@ -1,0 +1,497 @@
+C:\Users\kumar\Desktop\Anypoint WorkSpace\check-in-papi>mvn clean verify -Danypoint.platform.client_id=532f....................... -Danypoint.platform.client_secret=A579.................... -Dmule.env=dev -Dencryption.key=x7#M9..............................
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ------< 713ed815-e409-4a51-9ef2-7a71017fa06e:check-in-papi-impl >-------
+[INFO] Building check-in-papi 1.0.3
+[INFO]   from pom.xml
+[INFO] --------------------------[ mule-application ]--------------------------
+[INFO]
+[INFO] --- clean:3.2.0:clean (default-clean-1) @ check-in-papi-impl ---
+[INFO] Deleting C:\Users\kumar\Desktop\Anypoint WorkSpace\check-in-papi\target
+[INFO]
+[INFO] --- clean:3.2.0:clean (default-clean) @ check-in-papi-impl ---
+[INFO]
+[INFO] --- mule:4.10.0:clean (default-clean) @ check-in-papi-impl ---
+[INFO]
+[INFO] --- mule:4.10.0:validate (default-validate) @ check-in-papi-impl ---
+[INFO]
+[INFO] --- enforcer:3.5.0:enforce (enforce-toolchain) @ check-in-papi-impl ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] Rule 1: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] Rule 2: org.apache.maven.enforcer.rules.dependency.RequireReleaseDeps passed
+[INFO]
+[INFO] --- mule:4.10.0:initialize (default-initialize) @ check-in-papi-impl ---
+[INFO]
+[INFO] --- mule:4.10.0:generate-sources (default-generate-sources) @ check-in-papi-impl ---
+[INFO]
+[INFO] --- mule:4.10.0:process-sources (default-process-sources) @ check-in-papi-impl ---
+[INFO] About to fetch required dependencies for artifact: 713ed815-e409-4a51-9ef2-7a71017fa06e:check-in-papi-impl:pom:1.0.3. This may take a while...
+[INFO]
+[INFO] --- resources:3.3.1:resources (default-resources) @ check-in-papi-impl ---
+[INFO] Copying 16 resources from src\main\resources to target\classes
+[INFO] Copying 3 resources from src\main\resources to target\classes
+[INFO]
+[INFO] --- mule:4.10.0:process-resources (default-process-resources) @ check-in-papi-impl ---
+[INFO]
+[INFO] --- compiler:3.14.1:compile (default-compile) @ check-in-papi-impl ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO]
+[INFO] --- mule:4.10.0:compile (default-compile) @ check-in-papi-impl ---
+[INFO]
+[INFO] --- mule:4.10.0:process-classes (default-process-classes) @ check-in-papi-impl ---
+[INFO] Building factory for Mule Runtime version 4.12.0
+[INFO] Building from Mule Runtime distribution in 'C:\Users\kumar\Desktop\Anypoint WorkSpace\check-in-papi\target\build-dependencies\mule-framework-latest-bundle-2.0.0'
+[WARNING] Ignoring duplicated module 'com.mulesoft.connectivity.mule.api'
+[WARNING] Ignoring duplicated module 'org.mule.runtime.metadata.model.persistence'
+[INFO] Loaded AbstractMuleFrameworkBuilderFactory implementation 'org.mule.framework.impl.builder.DefaultMuleFrameworkBuilderFactory' from classloader 'java.net.URLClassLoader@6a6e410c'
+[INFO] About to fetch required dependencies for artifact: 713ed815-e409-4a51-9ef2-7a71017fa06e:check-in-papi-impl:pom:1.0.3. This may take a while...
+[INFO] Loaded AbstractDataTypeBuilderFactory implementation 'org.mule.runtime.core.api.metadata.DefaultDataTypeBuilderFactory' from classloader 'java.net.URLClassLoader@6a6e410c'
+[WARNING] Component 'console' in extension 'APIKit' already has a 'config-ref' parameter defined. Skipping ConfigRefDeclarationEnricher for it.
+[WARNING] Component 'router' in extension 'APIKit' already has a 'config-ref' parameter defined. Skipping ConfigRefDeclarationEnricher for it.
+[WARNING] [globalConfiguration.xml:19]: Invalid configuration found for parameter 'file': ${mule.env}.yaml
+[WARNING] [globalConfiguration.xml:20]: Invalid configuration found for parameter 'file': ${mule.env}-secure.yaml
+[WARNING] [globalConfiguration.xml:29]: Invalid configuration found for parameter 'path': ${tls.key-store.path}
+[INFO]
+[INFO] --- mule:4.10.0:generate-test-sources (default-generate-test-sources) @ check-in-papi-impl ---
+[INFO]
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ check-in-papi-impl ---
+[INFO] Copying 1 resource from src\test\resources to target\test-classes
+[INFO] Copying 0 resource from src\test\resources to target\test-classes
+[INFO]
+[INFO] --- mule:4.10.0:generate-test-resources (default-generate-test-resources) @ check-in-papi-impl ---
+[INFO]
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ check-in-papi-impl ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO]
+[INFO] --- mule:4.10.0:test-compile (default-test-compile) @ check-in-papi-impl ---
+[INFO]
+[INFO] --- surefire:3.5.4:test (default-test) @ check-in-papi-impl ---
+[INFO]
+[INFO] --- munit:3.7.4:test (test) @ check-in-papi-impl ---
+[INFO] Acquiring dynamic ports...
+[INFO] Dynamic port definition [DONE]
+[INFO] About to fetch required dependencies for artifact: 713ed815-e409-4a51-9ef2-7a71017fa06e:check-in-papi-impl:pom:1.0.3. This may take a while...
+[INFO] Copying files to C:\Users\kumar\Desktop\Anypoint WorkSpace\check-in-papi\target\munitworkingdir-78320868192900\check-in-papi-impl
+[INFO] 39 files copied to C:\Users\kumar\Desktop\Anypoint WorkSpace\check-in-papi\target\munitworkingdir-78320868192900\check-in-papi-impl
+[INFO] Running MULE_EE with version 4.9.21
+[INFO] --add-opens: java.base/java.lang.invoke=munit.starter
+[INFO] --add-opens: java.base/java.lang.reflect=munit.starter
+[INFO] --add-opens: java.base/java.lang=munit.starter
+[INFO] --add-opens: java.sql/java.sql=munit.starter
+[INFO] --add-opens: java.naming/javax.naming=munit.starter
+[LayerStarter] WARNING: sun.security.provider is not open to module munit.starter
+[LayerStarter] WARNING: sun.management is not open to module munit.starter
+[LayerStarter] WARNING: com.sun.management.internal is not open to module munit.starter
+INFO  2026-09-29 13:58:46,819 [main] org.mule.munit.remote.RemoteRunner: Run Started
+
+
+INFO  2026-09-29 13:58:46,828 [main] org.mule.munit.remote.RemoteRunner: Mule container is starting, it could take a few minutes
+INFO  2026-09-29 13:58:47,118 [main] org.mule.runtime.module.embedded.internal.utils.EmbeddedImplementationUtils: Dependencies to ignore for Runtime version 4.9.21 and Java version 17: []
+INFO  2026-09-29 13:58:48,978 [main] org.mule.munit.remote.coverage.CoverageManager: Starting coverage server
+INFO  2026-09-29 13:58:48,978 [pool-4-thread-1] org.mule.munit.remote.coverage.server.CoverageServer: Coverage Server starting...
+INFO  2026-09-29 13:58:48,978 [pool-4-thread-1] org.mule.munit.remote.coverage.server.CoverageServer: Waiting for coverage client connection in port [50263]...
+INFO  2026-09-29 13:58:52,567 [Embedded] org.mule.runtime.core.internal.logging:
+**********************************************************************
+*                                                                    *
+*                         (((((((((((((((((((                        *
+*                     (((((                 ((((#                    *
+*                  &(((                        *(((                  *
+*                &(((                             (((                *
+*               (((     (((%               (((#     (((              *
+*              ((     (((((((             (((((((    (((             *
+*             ((     (((((((((           (((((((((     ((            *
+*            ((    #(((((((((((        #(((((((((((    (((           *
+*           #((    ((((((((((((((     ((((((((((((((    ((           *
+*           ((    ((((((  /(((((((   (((((((  /((((((    ((          *
+*           ((    ((((((    (((((((&(((((((    ((((((    ((          *
+*           ((    (((((      ((((((((((((*     ((((((    ((          *
+*           ((    ((((((      *(((((((((       ((((((    ((          *
+*           ((    ((((((        (((((((        ((((((   (((          *
+*            ((    ((((((                     ((((((    ((           *
+*            ((#    ((((((#                 (((((((    ((            *
+*             ((#    ((((((((             ((((((((    (((            *
+*              (((    (((((((              (((((     ((.             *
+*                ((      (((               (((     #((               *
+*                 /((                            (((                 *
+*                    (((                      &(((                   *
+*                      *((((&             &((((                      *
+*                           ((((((((((((((/                          *
+*                                                                    *
+*    ___  ___      _        ______            _   _                  *
+*    |  \/  |     | |       | ___ \          | | (_)                 *
+*    | .  . |_   _| | ___   | |_/ /   _ _ __ | |_ _ _ __ ___   ___   *
+*    | |\/| | | | | |/ _ \  |    / | | | '_ \| __| | '_ ` _ \ / _ \  *
+*    | |  | | |_| | |  __/  | |\ \ |_| | | | | |_| | | | | | |  __/  *
+*    \_|  |_/\__,_|_|\___|  \_| \_\__,_|_| |_|\__|_|_| |_| |_|\___|  *
+*                                                                    *
+*                                                                    *
+* Mule Runtime and Integration Platform                              *
+* Version: 4.9.21 Build: 3745e6d8                                    *
+* MuleSoft, Inc.                                                     *
+* For more information go to                                         *
+* https://www.mulesoft.com/platform/soa/mule-esb-enterprise          *
+*                                                                    *
+* Server started: 29/09/26, 1:58 pm                                  *
+* JDK: 17.0.17 (mixed mode, sharing)                                 *
+* JDK properties:                                                    *
+*  - java.vendor = Eclipse Adoptium                                  *
+*  - java.vm.name = OpenJDK 64-Bit Server VM                         *
+* - java.home = C:\Program Files\Eclipse                             *
+* Adoptium\jdk-17.0.17.10-hotspot                                    *
+* OS: Windows 11 -  (10.0, amd64)                                    *
+* Host: L4-INFERNO (192.168.1.103)                                   *
+* Mule services:                                                     *
+*  - api-gateway-contract-service-1.5.21                             *
+*  - api-gateway-events-collector-service-1.5.21                     *
+*  - mule-service-http-ee-1.12.21                                    *
+*  - mule-service-oauth-ee-1.6.21                                    *
+*  - mule-service-scheduler-1.9.21                                   *
+*  - mule-service-soap-1.9.11                                        *
+*  - mule-service-weave-ee-2.9.18                                    *
+* Mule server plugins:                                               *
+*  - munit-coverage-plugin-3.7.4-mule-server-plugin.jar              *
+* Mule system properties:                                            *
+*  - mule.testingMode = true                                         *
+*  - mule.env = dev                                                  *
+* - mule.home = C:\Users\kumar\Desktop\Anypoint                      *
+* WorkSpace\check-in-papi\target\munitworkingdir-78320868192900\cont *
+* ainer                                                              *
+*  - mule.mode.embedded = true                                       *
+**********************************************************************
+INFO  2026-09-29 13:58:52,777 [Embedded] org.mule.runtime.core.internal.logging:
+**********************************************************************
+* Cluster configuration                                              *
+*                                                                    *
+* Cluster mode disabled                                              *
+**********************************************************************
+WARN  2026-09-29 13:58:52,797 [Embedded] com.mulesoft.mule.runtime.plugin.discoverer.FileSystemPluginDiscoverer: Cannot unzip plugin file 'munit-coverage-plugin-3.7.4-mule-server-plugin.jar'
+WARN  2026-09-29 13:58:52,797 [Embedded] com.mulesoft.mule.runtime.plugin.discoverer.FileSystemPluginDiscoverer: Cannot delete plugin file 'munit-coverage-plugin-3.7.4-mule-server-plugin.jar'. Plugin will be overwritten on restart
+WARN  2026-09-29 13:58:52,797 [Embedded] com.mulesoft.mule.runtime.plugin.discoverer.FileSystemPluginDiscoverer: Cannot load descriptor for plugin 'munit-coverage-plugin-3.7.4-mule-server-plugin': Artifact descriptor does not exists: C:\Users\kumar\Desktop\Anypoint WorkSpace\check-in-papi\target\munitworkingdir-78320868192900\container\server-plugins\munit-coverage-plugin-3.7.4-mule-server-plugin\META-INF\mule-artifact\mule-artifact.json (org.mule.runtime.module.artifact.api.descriptor.ArtifactDescriptorCreateException)
+INFO  2026-09-29 13:58:52,825 [Embedded] org.mule.munit.plugins.coverage.CoverageServerPlugin: Initialising coverage plugin...
+INFO  2026-09-29 13:58:52,939 [Embedded] org.mule.runtime.core.internal.logging:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ New domain 'default'                                                         +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  2026-09-29 13:58:52,939 [Embedded] org.mule.runtime.core.internal.logging:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing domain 'default'                                                +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  2026-09-29 13:58:53,780 [Embedded] org.mule.runtime.api.metadata.AbstractDataTypeBuilderFactory: Loaded AbstractDataTypeBuilderFactory implementation 'org.mule.runtime.core.api.metadata.DefaultDataTypeBuilderFactory' from classloader 'jdk.internal.loader.Loader@2d70f312'
+INFO  2026-09-29 13:58:53,801 [Embedded] org.mule.runtime.module.deployment.internal.processor.FallbackArtifactConfigurationProcessor: Serialized AST not avaliable for artifact 'default'
+INFO  2026-09-29 13:58:53,972 [Embedded] org.mule.service.scheduler.internal.config.ContainerThreadPoolsConfig: No thread pools config file found. Using default values.
+INFO  2026-09-29 13:58:54,034 [Embedded] org.mule.runtime.core.internal.logging:
+**********************************************************************
+* Started DefaultSchedulerService                                    *
+*                                                                    *
+* Resolved configuration values:                                     *
+*                                                                    *
+* Pooling strategy:       UBER                                       *
+* gracefulShutdownTimeout:       15000 ms                            *
+* uber.threadPool.maxSize:         339                               *
+* uber.threadPool.threadKeepAlive: 30000 ms                          *
+*                                                                    *
+* These can be modified by editing 'conf/scheduler-pools.conf'       *
+**********************************************************************
+INFO  2026-09-29 13:58:54,043 [ArtifactDeployer.start.01] org.mule.runtime.core.internal.logging:
+**********************************************************************
+* Domain: default                                                    *
+* OS encoding: windows-1252, Mule encoding: UTF-8                    *
+*                                                                    *
+**********************************************************************
+INFO  2026-09-29 13:58:54,044 [ArtifactDeployer.start.01] org.mule.runtime.core.internal.logging:
+**********************************************************************
+* Started domain 'default'                                           *
+**********************************************************************
+INFO  2026-09-29 13:58:54,050 [Embedded] org.mule.runtime.core.internal.logging:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Mule is up and kicking (every 5000ms)                                        +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  2026-09-29 13:58:54,051 [Embedded] org.mule.runtime.core.internal.logging:
+**********************************************************************
+*              - - + DOMAIN + - -               * - - + STATUS + - - *
+**********************************************************************
+* default                                       * DEPLOYED           *
+**********************************************************************
+
+INFO  2026-09-29 13:58:54,064 [main] org.mule.munit.remote.container.ContainerSuiteRunDispatcher: Suite will run with MMV 4.9.0
+WARN  2026-09-29 13:58:54,272 [Embedded] org.mule.runtime.module.artifact.activation.internal.classloader.AbstractArtifactClassLoaderConfigurationAssembler: Shared library 'org.mule.runtime:mule-embedded-api' is a Mule Runtime dependency. It will not be used by 'munit-runner' in order to avoid classloading issues. Please consider removing it, or at least not putting it as a sharedLibrary.
+WARN  2026-09-29 13:58:54,272 [Embedded] org.mule.runtime.module.artifact.activation.internal.classloader.AbstractArtifactClassLoaderConfigurationAssembler: Shared library 'org.mule.runtime:mule-embedded-commons' is a Mule Runtime dependency. It will not be used by 'munit-runner' in order to avoid classloading issues. Please consider removing it, or at least not putting it as a sharedLibrary.
+WARN  2026-09-29 13:58:54,272 [Embedded] org.mule.runtime.module.artifact.activation.internal.classloader.AbstractArtifactClassLoaderConfigurationAssembler: Shared library 'org.mule.runtime:api-annotations' is a Mule Runtime dependency. It will not be used by 'munit-runner' in order to avoid classloading issues. Please consider removing it, or at least not putting it as a sharedLibrary.
+WARN  2026-09-29 13:58:54,273 [Embedded] org.mule.runtime.module.artifact.activation.internal.classloader.AbstractArtifactClassLoaderConfigurationAssembler: Shared library 'org.mule.runtime:mule-api' is a Mule Runtime dependency. It will not be used by 'munit-runner' in order to avoid classloading issues. Please consider removing it, or at least not putting it as a sharedLibrary.
+WARN  2026-09-29 13:58:54,273 [Embedded] org.mule.runtime.module.artifact.activation.internal.classloader.AbstractArtifactClassLoaderConfigurationAssembler: Shared library 'org.mule.runtime:mule-metadata-model-api' is a Mule Runtime dependency. It will not be used by 'munit-runner' in order to avoid classloading issues. Please consider removing it, or at least not putting it as a sharedLibrary.
+WARN  2026-09-29 13:58:54,273 [Embedded] org.mule.runtime.module.artifact.activation.internal.classloader.AbstractArtifactClassLoaderConfigurationAssembler: Shared library 'org.mule.runtime:mule-message-metadata-model' is a Mule Runtime dependency. It will not be used by 'munit-runner' in order to avoid classloading issues. Please consider removing it, or at least not putting it as a sharedLibrary.
+WARN  2026-09-29 13:58:54,273 [Embedded] org.mule.runtime.module.artifact.activation.internal.classloader.AbstractArtifactClassLoaderConfigurationAssembler: Shared library 'org.mule.runtime:mule-embedded-api' is a Mule Runtime dependency. It will not be used by 'munit-runner' in order to avoid classloading issues. Please consider removing it, or at least not putting it as a sharedLibrary.
+WARN  2026-09-29 13:58:54,274 [Embedded] org.mule.runtime.module.artifact.activation.internal.classloader.AbstractArtifactClassLoaderConfigurationAssembler: Shared library 'org.mule.runtime:mule-embedded-commons' is a Mule Runtime dependency. It will not be used by 'munit-runner' in order to avoid classloading issues. Please consider removing it, or at least not putting it as a sharedLibrary.
+WARN  2026-09-29 13:58:54,274 [Embedded] org.mule.runtime.module.artifact.activation.internal.classloader.AbstractArtifactClassLoaderConfigurationAssembler: Shared library 'org.mule.runtime:api-annotations' is a Mule Runtime dependency. It will not be used by 'munit-runner' in order to avoid classloading issues. Please consider removing it, or at least not putting it as a sharedLibrary.
+WARN  2026-09-29 13:58:54,274 [Embedded] org.mule.runtime.module.artifact.activation.internal.classloader.AbstractArtifactClassLoaderConfigurationAssembler: Shared library 'org.mule.runtime:mule-api' is a Mule Runtime dependency. It will not be used by 'munit-runner' in order to avoid classloading issues. Please consider removing it, or at least not putting it as a sharedLibrary.
+WARN  2026-09-29 13:58:54,274 [Embedded] org.mule.runtime.module.artifact.activation.internal.classloader.AbstractArtifactClassLoaderConfigurationAssembler: Shared library 'org.mule.runtime:mule-metadata-model-api' is a Mule Runtime dependency. It will not be used by 'munit-runner' in order to avoid classloading issues. Please consider removing it, or at least not putting it as a sharedLibrary.
+WARN  2026-09-29 13:58:54,274 [Embedded] org.mule.runtime.module.artifact.activation.internal.classloader.AbstractArtifactClassLoaderConfigurationAssembler: Shared library 'org.mule.runtime:mule-message-metadata-model' is a Mule Runtime dependency. It will not be used by 'munit-runner' in order to avoid classloading issues. Please consider removing it, or at least not putting it as a sharedLibrary.
+INFO  2026-09-29 13:58:54,337 [Embedded] org.mule.runtime.core.internal.logging:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ New app 'check-in-papi-impl'                                                 +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  2026-09-29 13:58:54,338 [Embedded] org.mule.runtime.core.internal.logging:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'check-in-papi-impl'                                        +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+WARN  2026-09-29 13:58:55,395 [ForkJoinPool.commonPool-worker-3] org.mule.runtime.extension.internal.loader.enricher.ConfigRefDeclarationEnricher: Component 'console' in extension 'APIKit' already has a 'config-ref' parameter defined. Skipping ConfigRefDeclarationEnricher for it.
+WARN  2026-09-29 13:58:55,395 [ForkJoinPool.commonPool-worker-3] org.mule.runtime.extension.internal.loader.enricher.ConfigRefDeclarationEnricher: Component 'router' in extension 'APIKit' already has a 'config-ref' parameter defined. Skipping ConfigRefDeclarationEnricher for it.
+INFO  2026-09-29 13:58:56,867 [Embedded] org.mule.runtime.api.el.AbstractBindingContextBuilderFactory: Loaded BindingContextBuilderFactory implementation 'org.mule.runtime.core.api.el.DefaultBindingContextBuilderFactory' from classloader 'jdk.internal.loader.Loader@2d70f312'
+WARN  2026-09-29 13:58:56,876 [Embedded] org.mule.runtime.core.internal.el.DefaultBindingContextBuilder$BindingContextImplementation: Two modules with namespace 'Munit' were found in a binding context. Set log level to DEBUG for details
+WARN  2026-09-29 13:58:56,877 [Embedded] org.mule.runtime.core.internal.el.DefaultBindingContextBuilder$BindingContextImplementation: Two modules with namespace 'Batch' were found in a binding context. Set log level to DEBUG for details
+INFO  2026-09-29 13:58:57,569 [Embedded] com.mulesoft.mule.runtime.gw.deployment.ApiDeploymentCoreExtension: Starting API Gateway Extension in STANDALONE mode
+INFO  2026-09-29 13:58:57,643 [Embedded] com.mulesoft.mule.runtime.gw.policies.lifecyle.GateKeeper: GateKeeper started in FLEXIBLE mode
+INFO  2026-09-29 13:58:59,360 [Embedded] com.mulesoft.mule.runtime.gw.client.provider.ApiPlatformClientProvider: Client ID and Client Secret successfully validated against API Manager.
+INFO  2026-09-29 13:58:59,416 [ArtifactDeployer.start.01] org.mule.runtime.core.internal.logging:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'check-in-papi-impl'                                            +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  2026-09-29 13:58:59,427 [ArtifactDeployer.start.01] org.mule.runtime.core.internal.logging:
+**********************************************************************
+* Application: check-in-papi-impl                                    *
+* OS encoding: windows-1252, Mule encoding: UTF-8                    *
+*                                                                    *
+**********************************************************************
+INFO  2026-09-29 13:58:59,429 [ArtifactDeployer.start.01] org.mule.runtime.core.internal.logging:
+**********************************************************************
+* Started app 'check-in-papi-impl'                                   *
+* Application plugins:                                               *
+*  - MUnit : 3.7.4                                                   *
+*  - MUnit Tools : 3.7.4                                             *
+*  - Sockets : 1.2.9                                                 *
+*  - Tracing : 1.2.0                                                 *
+*  - secure-properties : 1.3.2                                       *
+*  - HTTP : 1.12.1                                                   *
+*  - APIKit : 1.12.5                                                 *
+* Application libraries:                                             *
+*  - check-in-papi-1.0.0-oas.zip                                     *
+*  - assertions-1.1.2.jar                                            *
+*  - wlang-2.4.0-20220420.jar                                        *
+**********************************************************************
+INFO  2026-09-29 13:58:59,432 [munit.01] org.mule.munit.runner.remote.api.server.RunnerServer: Waiting for client connection
+INFO  2026-09-29 13:58:59,439 [munit.01] org.mule.munit.runner.remote.api.server.RunnerServer: Client connection received from kubernetes.docker.internal - true
+WARN  2026-09-29 13:59:02,380 [munit.01] org.mule.runtime.config.internal.dsl.spring.ComponentConfigurationBuilder: Parameter ignore from extension munit has a defaultValue configured in the componentBuildingDefinition but not in the extensionModel.
+INFO  2026-09-29 13:59:02,516 [munit.01] org.mule.runtime.core.internal.construct.FlowConstructLifecycleManager: Initialising flow: check-in-by-pnr
+INFO  2026-09-29 13:59:02,573 [munit.01] org.mule.runtime.api.message.AbstractMuleMessageBuilderFactory: Loaded MuleMessageBuilderFactory implementation 'org.mule.runtime.core.internal.message.DefaultMessageBuilderFactory' from classloader 'jdk.internal.loader.Loader@2d70f312'
+INFO  2026-09-29 13:59:02,661 [munit.01] org.mule.runtime.core.internal.construct.FlowConstructLifecycleManager: Initialising flow: payment-approval-by-pnr
+INFO  2026-09-29 13:59:02,670 [munit.01] org.mule.runtime.core.internal.construct.FlowConstructLifecycleManager: Starting flow: check-in-by-pnr
+INFO  2026-09-29 13:59:02,875 [munit.01] org.mule.runtime.core.internal.construct.FlowConstructLifecycleManager: Starting flow: payment-approval-by-pnr
+================================================================================
+=== Running suite: implementation-test-suite.xml                             ===
+================================================================================
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Running test: implementation-test-suite-check-in-by-pnrTest - Test           +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+INFO  2026-09-29 13:59:03,017 [[MuleRuntime].uber.02: [check-in-papi-impl].check-in-by-pnr.CPU_LITE @396eb7b0] org.mule.runtime.core.internal.processor.LoggerMessageProcessor: START
+INFO  2026-09-29 13:59:03,027 [[MuleRuntime].uber.05: [check-in-papi-impl].check-in-by-pnr.CPU_INTENSIVE @5f72d7ea] org.mule.runtime.core.internal.processor.LoggerMessageProcessor: END
+
+
+INFO  2026-09-29 13:59:03,107 [munit.01] org.mule.munit.runner.model.Suite: SUCCESS - test: implementation-test-suite-check-in-by-pnrTest - Time elapsed: 0.21 sec
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Running test: implementation-test-suite-payment-approval-by-pnrTest - Test   +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+INFO  2026-09-29 13:59:03,117 [munit.01] org.mule.munit.runner.model.Suite: SUCCESS - test: implementation-test-suite-payment-approval-by-pnrTest - Time elapsed: 0.01 sec
+
+
+================================================================================
+= Tests run: 2 - Failed: 0 - Errors: 0 - Skipped: 0 - Time elapsed: 0.23 sec   =
+================================================================================
+INFO  2026-09-29 13:59:03,118 [munit.01] org.mule.munit.runner.remote.api.server.RunnerServer: Waiting for client connection
+
+
+INFO  2026-09-29 13:59:03,119 [Embedded] org.mule.runtime.module.deployment.internal.DefaultArchiveDeployer: ================== Request to Undeploy Artifact: check-in-papi-impl
+INFO  2026-09-29 13:59:03,167 [pool-4-thread-1] org.mule.munit.remote.coverage.server.CoverageServer: Coverage client connection received from kubernetes.docker.internal - true
+INFO  2026-09-29 13:59:03,171 [pool-4-thread-1] org.mule.munit.remote.coverage.server.CoverageServer: Coverage client connection received from kubernetes.docker.internal - true
+INFO  2026-09-29 13:59:03,173 [Embedded] org.mule.runtime.core.internal.logging:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Stopping application 'check-in-papi-impl'                                    +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  2026-09-29 13:59:03,174 [pool-10-thread-1] org.mule.munit.remote.coverage.CoverageManager: accumulating covered locations
+INFO  2026-09-29 13:59:03,175 [Embedded] org.mule.runtime.core.internal.construct.FlowConstructLifecycleManager: Stopping flow: payment-approval-by-pnr
+INFO  2026-09-29 13:59:03,175 [pool-11-thread-1] org.mule.munit.remote.coverage.CoverageManager: accumulating covered locations
+INFO  2026-09-29 13:59:03,191 [Embedded] org.mule.runtime.core.internal.construct.FlowConstructLifecycleManager: Stopping flow: check-in-by-pnr
+INFO  2026-09-29 13:59:03,198 [Embedded] org.mule.runtime.core.internal.logging:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Disposing application 'check-in-papi-impl'                                   +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  2026-09-29 13:59:03,198 [Embedded] org.mule.runtime.core.internal.logging: Stopping app 'check-in-papi-impl' with no mule context
+INFO  2026-09-29 13:59:03,217 [Embedded] org.mule.runtime.core.internal.construct.FlowConstructLifecycleManager: Disposing flow: payment-approval-by-pnr
+INFO  2026-09-29 13:59:03,219 [Embedded] org.mule.runtime.core.internal.construct.FlowConstructLifecycleManager: Disposing flow: check-in-by-pnr
+INFO  2026-09-29 13:59:03,435 [Embedded] org.mule.runtime.core.internal.logging:
+**********************************************************************
+* Application "check-in-papi-impl" shut down normally on: 29/09/26,  *
+* 1:59 pm                                                            *
+* Up for: 0 days, 0 hours, 0 mins, 4.19 sec                          *
+**********************************************************************
+INFO  2026-09-29 13:59:03,567 [Embedded] org.mule.runtime.core.internal.logging:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Undeployed artifact 'check-in-papi-impl'                                     +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  2026-09-29 13:59:03,570 [Embedded] org.mule.runtime.core.internal.logging:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Stopping domain 'default'                                                    +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  2026-09-29 13:59:03,570 [Embedded] org.mule.runtime.core.internal.logging:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Disposing domain 'default'                                                   +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  2026-09-29 13:59:03,570 [Embedded] org.mule.runtime.core.internal.logging: Stopping domain 'default' with no mule context
+INFO  2026-09-29 13:59:03,571 [Embedded] org.mule.runtime.core.internal.logging:
+**********************************************************************
+* Domain "default" shut down normally on: 29/09/26, 1:59 pm          *
+* Up for: 0 days, 0 hours, 0 mins, 9.534 sec                         *
+**********************************************************************
+INFO  2026-09-29 13:59:03,845 [Embedded] org.mule.service.scheduler.internal.service.DefaultSchedulerService: Stopping DefaultSchedulerService...
+INFO  2026-09-29 13:59:04,041 [Embedded] org.mule.service.scheduler.internal.service.DefaultSchedulerService: Stopped org.mule.service.scheduler.internal.service.DefaultSchedulerService$1@235f9e3
+INFO  2026-09-29 13:59:05,055 [main] org.mule.munit.remote.coverage.CoverageManager: Shutting down coverage server
+INFO  2026-09-29 13:59:05,057 [main] org.mule.munit.remote.coverage.CoverageManager: Calculating application coverage
+
+
+
+
+INFO  2026-09-29 13:59:05,067 [main] org.mule.munit.remote.RemoteRunner: Done
+[INFO] ===============================================================================
+[INFO] MUnit Coverage Summary
+[INFO] ===============================================================================
+[INFO]  * Resources: 5 - Flows: 11 - Processors: 22
+[INFO]  * Application Coverage: 31.82%
+[INFO] ====================================================================================
+[INFO] MUnit Run Summary - Product: MULE_EE, Version: 4.9.21
+[INFO] ====================================================================================
+[INFO]  >> implementation-test-suite.xml test result: Tests: 2, Errors: 0, Failures: 0, Skipped: 0
+[INFO]
+[INFO] ====================================================================================
+[INFO]  > Tests:        2
+[INFO]  > Errors:       0
+[INFO]  > Failures:     0
+[INFO]  > Skipped:      0
+[INFO] ====================================================================================
+[INFO]
+[INFO] >>> munit:3.7.4:coverage-report (test) > [munit]test @ check-in-papi-impl >>>
+[INFO]
+[INFO] --- mule:4.10.0:validate (default-validate) @ check-in-papi-impl ---
+[INFO]
+[INFO] --- enforcer:3.5.0:enforce (enforce-toolchain) @ check-in-papi-impl ---
+[INFO] Rule 2: org.apache.maven.enforcer.rules.dependency.RequireReleaseDeps passed
+[INFO]
+[INFO] --- mule:4.10.0:initialize (default-initialize) @ check-in-papi-impl ---
+[INFO]
+[INFO] --- mule:4.10.0:generate-sources (default-generate-sources) @ check-in-papi-impl ---
+[INFO]
+[INFO] --- mule:4.10.0:process-sources (default-process-sources) @ check-in-papi-impl ---
+[INFO]
+[INFO] --- resources:3.3.1:resources (default-resources) @ check-in-papi-impl ---
+[INFO] Copying 16 resources from src\main\resources to target\classes
+[INFO] Copying 3 resources from src\main\resources to target\classes
+[INFO]
+[INFO] --- mule:4.10.0:process-resources (default-process-resources) @ check-in-papi-impl ---
+[INFO]
+[INFO] --- compiler:3.14.1:compile (default-compile) @ check-in-papi-impl ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO]
+[INFO] --- mule:4.10.0:compile (default-compile) @ check-in-papi-impl ---
+[INFO]
+[INFO] --- mule:4.10.0:process-classes (default-process-classes) @ check-in-papi-impl ---
+[INFO]
+[INFO] --- mule:4.10.0:generate-test-sources (default-generate-test-sources) @ check-in-papi-impl ---
+[INFO]
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ check-in-papi-impl ---
+[INFO] Copying 1 resource from src\test\resources to target\test-classes
+[INFO] Copying 0 resource from src\test\resources to target\test-classes
+[INFO]
+[INFO] --- mule:4.10.0:generate-test-resources (default-generate-test-resources) @ check-in-papi-impl ---
+[INFO]
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ check-in-papi-impl ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO]
+[INFO] --- mule:4.10.0:test-compile (default-test-compile) @ check-in-papi-impl ---
+[INFO]
+[INFO] --- surefire:3.5.4:test (default-test) @ check-in-papi-impl ---
+[INFO]
+[INFO] --- munit:3.7.4:test (test) @ check-in-papi-impl ---
+[INFO] Skipping execution of munit because it has already been run
+[INFO]
+[INFO] <<< munit:3.7.4:coverage-report (test) < [munit]test @ check-in-papi-impl <<<
+[INFO]
+[INFO]
+[INFO] --- munit:3.7.4:coverage-report (test) @ check-in-papi-impl ---
+[INFO] Generating: Console report...
+[INFO] ===============================================================================
+[INFO]                          MUnit Coverage Report
+[INFO] ===============================================================================
+[INFO]
+[INFO] ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+[INFO] ║ Resource File: Implementation/payment-approval-by-pnr.xml - Containers: 1 - Weight: 9.09 -  Coverage: 100.00% ║
+[INFO] ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+[INFO] +-------------------------+------+-------------+-----------+----------+
+[INFO] | Name                    | Type | Covered (P) | Total (P) | Coverage |
+[INFO] +-------------------------+------+-------------+-----------+----------+
+[INFO] | payment-approval-by-pnr | Flow |      2      |     2     | 100.00%  |
+[INFO] +-------------------------+------+-------------+-----------+----------+
+[INFO] ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+[INFO] ║ Resource File: Implementation/check-in-by-pnr.xml - Containers: 1 - Weight: 22.73 -  Coverage: 100.00% ║
+[INFO] ╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+[INFO] +-----------------+------+-------------+-----------+----------+
+[INFO] | Name            | Type | Covered (P) | Total (P) | Coverage |
+[INFO] +-----------------+------+-------------+-----------+----------+
+[INFO] | check-in-by-pnr | Flow |      5      |     5     | 100.00%  |
+[INFO] +-----------------+------+-------------+-----------+----------+
+[INFO] ╔══════════════════════════════════════════════════════════════════════════════════════════╗
+[INFO] ║ Resource File: globalErrorHandler.xml - Containers: 2 - Weight: 31.82 -  Coverage: 0.00% ║
+[INFO] ╚══════════════════════════════════════════════════════════════════════════════════════════╝
+[INFO] +------------------------------+---------------+-------------+-----------+----------+
+[INFO] | Name                         | Type          | Covered (P) | Total (P) | Coverage |
+[INFO] +------------------------------+---------------+-------------+-----------+----------+
+[INFO] | global-error-handler-main    | Error handler |      0      |     6     |  0.00%   |
+[INFO] | global-error-handler-console | Error handler |      0      |     1     |  0.00%   |
+[INFO] +------------------------------+---------------+-------------+-----------+----------+
+[INFO] ╔═══════════════════════════════════════════════════════════════════════════╗
+[INFO] ║ Resource File: api.xml - Containers: 4 - Weight: 18.18 -  Coverage: 0.00% ║
+[INFO] ╚═══════════════════════════════════════════════════════════════════════════╝
+[INFO] +----------------------------------------------------------------+------+-------------+-----------+----------+
+[INFO] | Name                                                           | Type | Covered (P) | Total (P) | Coverage |
+[INFO] +----------------------------------------------------------------+------+-------------+-----------+----------+
+[INFO] | api-main                                                       | Flow |      0      |     1     |  0.00%   |
+[INFO] | put:\tickets\(PNR)\checkin:application\json:apiConfig          | Flow |      0      |     1     |  0.00%   |
+[INFO] | put:\tickets\(PNR)\paymentApproval:application\json:api-config | Flow |      0      |     1     |  0.00%   |
+[INFO] | api-console                                                    | Flow |      0      |     1     |  0.00%   |
+[INFO] +----------------------------------------------------------------+------+-------------+-----------+----------+
+[INFO] ╔══════════════════════════════════════════════════════════════════════════════╗
+[INFO] ║ Resource File: health.xml - Containers: 3 - Weight: 18.18 -  Coverage: 0.00% ║
+[INFO] ╚══════════════════════════════════════════════════════════════════════════════╝
+[INFO] +----------------------------------+----------+-------------+-----------+----------+
+[INFO] | Name                             | Type     | Covered (P) | Total (P) | Coverage |
+[INFO] +----------------------------------+----------+-------------+-----------+----------+
+[INFO] | check-all-dependencies-are-alive | Sub flow |      0      |     1     |  0.00%   |
+[INFO] | api-alive                        | Flow     |      0      |     1     |  0.00%   |
+[INFO] | api-ready                        | Flow     |      0      |     2     |  0.00%   |
+[INFO] +----------------------------------+----------+-------------+-----------+----------+
+[INFO]
+[INFO] ===============================================================================
+[INFO]                                  Summary
+[INFO] ===============================================================================
+[INFO]   * Covered Processors: 7
+[INFO]   * Total Processors:   22
+[INFO]   * Containers:         11
+[INFO]   * Resources:          5
+[INFO] ===============================================================================
+[INFO]                          ** Application Coverage: 31.82% **
+[INFO] ===============================================================================
+[INFO] Generating: HTML report...
+[INFO]
+[INFO] --- mule:4.10.0:package (default-package) @ check-in-papi-impl ---
+[INFO] Building zip: C:\Users\kumar\Desktop\Anypoint WorkSpace\check-in-papi\target\check-in-papi-impl-1.0.3-mule-application.jar
+[INFO]
+[INFO] --- mule:4.10.0:verify (default-verify) @ check-in-papi-impl ---
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  38.315 s
+[INFO] Finished at: 2026-09-29T13:59:07+05:30
+[INFO] ------------------------------------------------------------------------

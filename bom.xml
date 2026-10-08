@@ -102,7 +102,7 @@
 
 		<!-- Everything below is carried over from your sample [UNVERIFIED]: check each one on Exchange before you use it -->
 		<soapkit.version>1.2.11</soapkit.version>
-		<secure.conf.prop.module.version>1.2.3</secure.conf.prop.module.version>
+		<secure.conf.prop.module.version>1.3.2</secure.conf.prop.module.version>
 		<validation.module.version>2.0.1</validation.module.version>
 		<json.module.version>2.1.6</json.module.version>
 		<xml.module.version>1.3.3</xml.module.version>
@@ -117,7 +117,7 @@
 		<file.connector.version>1.3.4</file.connector.version>
 		<email.connector.version>1.6.0</email.connector.version>
 		<tita.unit.version>2.7.0</tita.unit.version>
-		<tracing.module.version>1.0.0</tracing.module.version>
+		<tracing.module.version>1.2.0</tracing.module.version>
 
 		<!-- 3rd party libs (only used for MUnit DB tests) -->
 		<postgresql.version>42.3.5</postgresql.version>
@@ -125,7 +125,7 @@
 
 		<!-- ===================== EXCHANGE / PROJECT ARTIFACTS ===================== -->
 		<!-- Org that owns the shared API assets (AnyAirline training org). Replace with YOUR org id when you host your own assets. -->
-		<aa.ap.orgid>a63e6d25-8aaf-4512-b36d-d91b90a55c4a</aa.ap.orgid>
+		<aa.ap.orgid>713ed815-e409-4a51-9ef2-7a71017fa06e</aa.ap.orgid>
 		<aa.exchange.repo.id>anypoint-exchange-${aa.ap.orgid}</aa.exchange.repo.id>
 
 		<!-- Your own org id (also the groupId of this BOM). Used for publishing to YOUR Exchange. -->

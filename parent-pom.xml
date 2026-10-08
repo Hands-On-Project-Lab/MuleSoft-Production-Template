@@ -59,6 +59,12 @@
 		<!-- Fail-fast rules used by the enforcer below -->
 		<java.required.range>[17,18)</java.required.range>
 		<maven.required.range>[${maven.min.version},${maven.max.version})</maven.required.range>
+
+		<api.layer.eapi>Experience</api.layer.eapi>
+		<api.layer.papi>Process</api.layer.papi>
+		<api.layer.sapi>System</api.layer.sapi>
+		<api.layer.backend>Backend</api.layer.backend>
+		<api.layer.none>None</api.layer.none>
 	</properties>
 
 	<build>
@@ -236,8 +242,8 @@
 		<profile>
 			<id>qa</id>
 			<properties>
-				<deploy.environment>QA</deploy.environment>
-				<mule.env>qa</mule.env>
+				<deploy.environment>Test</deploy.environment>
+				<mule.env>test</mule.env>
 				<deploy.replicas>1</deploy.replicas>
 				<deploy.vcores>0.2</deploy.vcores>
 			</properties>
@@ -245,11 +251,11 @@
 		<profile>
 			<id>prod</id>
 			<properties>
-				<deploy.environment>Production</deploy.environment>
+				<deploy.environment>Prod</deploy.environment>
 				<mule.env>prod</mule.env>
 				<!-- Production: minimum 2 replicas for HA and zero-downtime rolling 
 					updates -->
-				<deploy.replicas>2</deploy.replicas>
+				<deploy.replicas>1</deploy.replicas>
 				<deploy.vcores>0.5</deploy.vcores>
 			</properties>
 		</profile>
@@ -300,6 +306,9 @@
 								<!-- Plain properties: visible in Runtime Manager UI. Non-secret 
 									only. -->
 								<properties>
+									<anypoint.platform.config.analytics.agent.enabled>true</anypoint.platform.config.analytics.agent.enabled>
+									<anypoint.platform.visualizer.displayName>${project.artifactId}</anypoint.platform.visualizer.displayName>
+									<anypoint.platform.visulaizer.visualizer.layer>${api.layer}</anypoint.platform.visulaizer.visualizer.layer>
 									<mule.env>${mule.env}</mule.env>
 									<anypoint.platform.client_id>${ap.autodiscovery.client_id}</anypoint.platform.client_id>
 								</properties>
